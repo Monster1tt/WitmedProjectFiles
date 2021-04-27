@@ -1,0 +1,23 @@
+#### 设定配置项目启动端口号
+server:
+  port: 11111
+spring:
+  ##### 设定项目应用名
+  application:
+    name: witmed-registry
+  ##### 开启 Spring Boot 的 Override 机制
+  main:
+    allow-bean-definition-overriding: true
+##### 设定 Eureka Server 信息
+eureka:
+  ##### 设定 Eureka Server 的 主机名
+  instance:
+    hostname: localhost
+  client:
+    ##### 禁止将 Eureka Server 将自己的服务注册到注册中心
+    register-with-eureka: false
+    ##### 禁止 本注册中心去其他注册中心发现服务
+    fetch-registry: false
+    ##### 暴露注册中心地址
+    service-url:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka
