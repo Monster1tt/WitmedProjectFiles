@@ -5,16 +5,44 @@ import java.util.Date;
 
 /**
  * <b>智慧医疗基础实体信息</b>
+ *
  * @author Monster
  * @version 1.0.0
  */
 public class BaseEntity implements Serializable {
 	private static final long serialVersionUID = 2144618206685352896L;
-	private String status;                     // 系统状态： 0-禁用 1-启用
-	private String createUser;                  // 创建人
-	private Date createTime;                    // 创建时间
-	private String updateUser;                  // 修改人
-	private Date updateTime;                    // 修改时间
+	private String id;                              // 主键
+	private String code;                            // 编码
+	private String text;                            // 编码含义
+	private String status;                          // 系统状态： 0-禁用 1-启用
+	private String createUser;                      // 创建人
+	private Date createTime;                        // 创建时间
+	private String updateUser;                      // 修改人
+	private Date updateTime;                        // 修改时间
+
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
+	}
+
+	public String getCode() {
+		return code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public String getText() {
+		return text;
+	}
+
+	public void setText(String text) {
+		this.text = text;
+	}
 
 	public String getStatus() {
 		return status;

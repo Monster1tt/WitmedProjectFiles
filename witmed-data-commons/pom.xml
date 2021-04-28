@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+                            http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<artifactId>witmed-data-commons</artifactId>
+	<packaging>jar</packaging>
+
+	<!-- 配置 Witmed Parent 依赖 [BEGIN] -->
+	<parent>
+		<groupId>com.wler.witmed</groupId>
+		<artifactId>witmed-parent</artifactId>
+		<version>1.0.0</version>
+	</parent>
+	<!-- 配置 Witmed Parent 依赖 [END] -->
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
+		<mybatis-spring-boot-starter.version>2.1.4</mybatis-spring-boot-starter.version>
+		<druid-spring-boot-starter.version>1.2.6</druid-spring-boot-starter.version>
+		<pagehelper-spring-boot-starter.version>1.3.0</pagehelper-spring-boot-starter.version>
+	</properties>
+
+	<dependencies>
+		<!-- 配置 Witmed Commons 依赖 [BEGIN] -->
+		<dependency>
+			<groupId>com.wler.witmed</groupId>
+			<artifactId>witmed-commons</artifactId>
+			<version>${parent.version}</version>
+		</dependency>
+		<!-- 配置 Witmed Commons 依赖 [END] -->
+
+		<!-- 配置 MySQL Connector Java 依赖 [BEGIN] -->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+		</dependency>
+		<!-- 配置 MySQL Connector Java 依赖 [END] -->
+
+		<!-- 配置 MyBatis Spring Boot Starter 依赖 [BEGIN] -->
+		<dependency>
+			<groupId>org.mybatis.spring.boot</groupId>
+			<artifactId>mybatis-spring-boot-starter</artifactId>
+			<version>${mybatis-spring-boot-starter.version}</version>
+		</dependency>
+		<!-- 配置 MyBatis Spring Boot Starter 依赖 [END] -->
+
+		<!-- 配置 Druid Spring Boot Starter 依赖 [BEGIN] -->
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>druid-spring-boot-starter</artifactId>
+			<version>${druid-spring-boot-starter.version}</version>
+		</dependency>
+		<!-- 配置 Druid Spring Boot Starter 依赖 [END] -->
+
+		<!-- 配置 PageHelper Spring Boot Starter 依赖 [BEGIN] -->
+		<dependency>
+			<groupId>com.github.pagehelper</groupId>
+			<artifactId>pagehelper-spring-boot-starter</artifactId>
+			<version>${pagehelper-spring-boot-starter.version}</version>
+		</dependency>
+		<!-- 配置 PageHelper Spring Boot Starter 依赖 [END] -->
+
+		<!-- 配置 Spring Boot Starter Data Redis 依赖 [BEGIN] -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-redis</artifactId>
+		</dependency>
+		<!-- 配置 Spring Boot Starter Data Redis 依赖 [END] -->
+
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<artifactId>maven-clean-plugin</artifactId>
+					<version>3.1.0</version>
+				</plugin>
+				<plugin>
+					<artifactId>maven-resources-plugin</artifactId>
+					<version>3.0.2</version>
+				</plugin>
+				<plugin>
+					<artifactId>maven-compiler-plugin</artifactId>
+					<version>3.8.0</version>
+				</plugin>
+				<plugin>
+					<artifactId>maven-surefire-plugin</artifactId>
+					<version>2.22.1</version>
+				</plugin>
+				<plugin>
+					<artifactId>maven-jar-plugin</artifactId>
+					<version>3.0.2</version>
+				</plugin>
+				<plugin>
+					<artifactId>maven-install-plugin</artifactId>
+					<version>2.5.2</version>
+				</plugin>
+				<plugin>
+					<artifactId>maven-deploy-plugin</artifactId>
+					<version>2.8.2</version>
+				</plugin>
+				<plugin>
+					<artifactId>maven-site-plugin</artifactId>
+					<version>3.7.1</version>
+				</plugin>
+				<plugin>
+					<artifactId>maven-project-info-reports-plugin</artifactId>
+					<version>3.0.0</version>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+	</build>
+</project>

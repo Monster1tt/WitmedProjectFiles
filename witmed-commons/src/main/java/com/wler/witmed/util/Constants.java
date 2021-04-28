@@ -30,4 +30,22 @@ public class Constants {
 	 * <b>Token 过期时间</b>
 	 */
 	public static final Long TOKEN_EXPIRE_MILLIS = Long.parseLong(props.getProperty("token.expire.millis"));
+	/**
+	 * <b>Token 过期时间</b>
+	 */
+	public static final Long REDIS_EXPIRE_MILLIS = Long.parseLong(props.getProperty("redis.expire.millis"));
+
+	public static final Long VERIFICATION_CODE_MILLIS = Long.parseLong(props.getProperty("verification.code.millis"));
+
+	public static final String CLLOPEN_SERVER_URL = props.getProperty("cloopen.server.url");
+
+	public static final String CLLOPEN_SERVER_PORT = props.getProperty("cloopen.server.port");
+
+	public static final String CLLOPEN_ACCOUNT_SID = props.getProperty("cloopen.account.sid");
+
+	public static final String CLLOPEN_ACCOUNT_TOKEN = props.getProperty("cloopen.account.token");
+
+	public static final String CLLOPEN_APP_ID = props.getProperty("cloopen.app.id");
+
+	public static final String CLLOPEN_TEMPLATE_ID = props.getProperty("cloopen.template.id");
 }

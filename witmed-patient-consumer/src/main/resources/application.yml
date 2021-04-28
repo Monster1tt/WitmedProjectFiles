@@ -1,0 +1,10 @@
+##### 项目启动端口号
+server:
+  port: 12001
+spring:
+  ##### 项目应用名
+  application:
+    name: witmed-patient-consumer
+  ##### 需要加载的配置文件
+  profiles:
+    active: client,mail

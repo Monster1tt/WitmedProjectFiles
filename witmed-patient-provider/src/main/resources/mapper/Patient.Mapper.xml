@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+		"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wler.witmed.dao.PatientDao">
+	<select id="findListByQuery" parameterType="Patient" resultMap="resultMap">
+		select
+		id,
+		cellphone,
+		password,
+		createTime,
+		updateTime
+		from
+		patient_copy1
+		<where>
+			<trim suffixOverrides="and">
+				<if test="id != null">id=#{id} and</if>
+				<if test="cellphone != null">cellphone=#{cellphone} and</if>
+			</trim>
+		</where>
+	</select>
+
+	<insert id="save" parameterType="Patient">
+		insert into patient_copy1 (
+		<trim suffixOverrides=",">
+			<if test="id != null">id,</if>
+			<if test="cellphone != null">cellphone,</if>
+			<if test="password != null">password,</if>
+			<if test="createTime != null">createTime,</if>
+			<if test="updateTime != null">updateTime,</if>
+		</trim>
+		) values (
+		<trim suffixOverrides=",">
+			<if test="id != null">#{id},</if>
+			<if test="cellphone != null">#{cellphone},</if>
+			<if test="password != null">#{password},</if>
+			<if test="createTime != null">#{createTime},</if>
+			<if test="updateTime != null">#{updateTime},</if>
+		</trim>
+		)
+	</insert>
+
+	<update id="update" parameterType="Patient">
+		update patient_copy1
+		<set>
+			<trim suffixOverrides=",">
+				<if test="name != null">text=#{name}</if>
+			</trim>
+		</set>
+		<where>
+			<trim suffixOverrides="and">
+				<if test="id != null">id=#{id} and</if>
+				<if test="cellphone != null">cellphone=#{cellphone} and</if>
+			</trim>
+		</where>
+	</update>
+
+	<resultMap id="resultMap" type="Patient">
+		<id property="id" javaType="java.lang.String" column="id"/>
+		<result property="cellphone" javaType="java.lang.String" column="cellphone"/>
+		<result property="password" javaType="java.lang.String" column="password"/>
+		<result property="createTime" javaType="java.util.Date" column="createTime"/>
+		<result property="updateTime" javaType="java.util.Date" column="updateTime"/>
+	</resultMap>
+</mapper>

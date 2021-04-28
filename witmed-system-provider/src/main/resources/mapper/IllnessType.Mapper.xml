@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+		"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wler.witmed.dao.IllnessTypeDao">
+	<select id="findListByQuery" parameterType="IllnessType" resultMap="resultMap">
+		select
+		id,
+		code,
+		text,
+		createUser,
+		createTime,
+		updateUser,
+		updateTime,
+		status
+		from
+		sys_illness_type
+		<where>
+			<trim suffixOverrides="and">
+				<if test="id != null">id=#{id} and</if>
+				<if test="code != null">code=#{code} and</if>
+				<if test="text != null">text like concat('%',#{text},'%') and</if>
+				<if test="status != null">status=#{status} and</if>
+			</trim>
+		</where>
+	</select>
+
+	<insert id="save" parameterType="IllnessType">
+		insert into sys_illness_type (
+		<trim suffixOverrides=",">
+			<if test="id != null">id,</if>
+			<if test="code != null">code,</if>
+			<if test="text != null">text,</if>
+			<if test="createUser != null">createUser,</if>
+			<if test="createTime != null">createTime,</if>
+			<if test="updateUser != null">updateUser,</if>
+			<if test="updateTime != null">updateTime,</if>
+			<if test="status != null">status,</if>
+		</trim>
+		) values (
+		<trim suffixOverrides=",">
+			<if test="id != null">#{id},</if>
+			<if test="code != null">#{code},</if>
+			<if test="text != null">#{text},</if>
+			<if test="createUser != null">#{createUser},</if>
+			<if test="createTime != null">#{createTime},</if>
+			<if test="updateUser != null">#{updateUser},</if>
+			<if test="updateTime != null">#{updateTime},</if>
+			<if test="status != null">#{status},</if>
+		</trim>
+		)
+	</insert>
+
+	<update id="update" parameterType="IllnessType">
+		update sys_illness_type
+		<set>
+			<trim suffixOverrides=",">
+				<if test="text != null">text=#{text}</if>
+				<if test="createUser != null">createUser=#{createUser}</if>
+				<if test="createTime != null">createTime=#{createTime}</if>
+				<if test="updateUser != null">updateUser=#{updateUser}</if>
+				<if test="updateTime != null">updateTime=#{updateTime}</if>
+				<if test="status != null">status=#{status}</if>
+			</trim>
+		</set>
+		<where>
+			<trim suffixOverrides="and">
+				<if test="id != null">id=#{id} and</if>
+				<if test="code != null">code=#{code} and</if>
+			</trim>
+		</where>
+	</update>
+
+	<resultMap id="resultMap" type="IllnessType">
+		<id property="id" javaType="java.lang.String" column="id"/>
+		<result property="code" javaType="java.lang.String" column="code"/>
+		<result property="text" javaType="java.lang.String" column="text"/>
+		<result property="createUser" javaType="java.lang.String" column="createUser"/>
+		<result property="createTime" javaType="java.util.Date" column="createTime"/>
+		<result property="updateUser" javaType="java.lang.String" column="updateUser"/>
+		<result property="updateTime" javaType="java.util.Date" column="updateTime"/>
+		<result property="status" javaType="java.lang.String" column="status"/>
+	</resultMap>
+</mapper>

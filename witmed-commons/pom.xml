@@ -21,13 +21,15 @@
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
 		<java-jwt.version>3.15.0</java-jwt.version>
+		<java-sms-sdk.version>1.0.3</java-sms-sdk.version>
+		<spring-boot-starter-mail.version>2.4.5</spring-boot-starter-mail.version>
 	</properties>
 
 	<dependencies>
 		<!-- 配置 Spring Cloud Netflix Eureka Client 依赖 [BEGIN] -->
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-netflix-eureka-client</artifactId>
+			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
 		</dependency>
 		<!-- 配置 Spring Cloud Netflix Eureka Client 依赖 [END] -->
 
@@ -45,6 +47,22 @@
 			<version>${java-jwt.version}</version>
 		</dependency>
 		<!-- 配置 Java JWT 依赖 [END] -->
+
+		<!-- 添加荣联云 java-sms-sdk 依赖 [BEGIN] -->
+		<dependency>
+			<groupId>com.cloopen</groupId>
+			<artifactId>java-sms-sdk</artifactId>
+			<version>${java-sms-sdk.version}</version>
+		</dependency>
+		<!-- 添加荣联云 java-sms-sdk 依赖 [END] -->
+
+		<!-- 配置 Spring Boot Starter Mail 依赖 [] -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-mail</artifactId>
+			<version>${spring-boot-starter-mail.version}</version>
+		</dependency>
+		<!-- 配置 Spring Boot Starter mail 依赖 [] -->
 
 		<dependency>
 			<groupId>junit</groupId>

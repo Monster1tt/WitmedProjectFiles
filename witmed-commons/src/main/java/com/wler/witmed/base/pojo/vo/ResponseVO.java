@@ -44,6 +44,15 @@ public class ResponseVO<E> implements Serializable {
 	/**
 	 * <b>获得系统响应成功视图</b>
 	 *
+	 * @return
+	 */
+	public static ResponseVO getSuccessResponseVO() {
+		return new ResponseVO(ResponseCodeEnum.RESPONSE_CODE_SUCCESS.getCode());
+	}
+
+	/**
+	 * <b>获得系统响应成功视图</b>
+	 *
 	 * @param data
 	 * @return
 	 */

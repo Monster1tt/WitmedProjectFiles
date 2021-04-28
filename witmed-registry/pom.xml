@@ -26,7 +26,7 @@
 		<!-- 配置 Spring Cloud Netflix Eureka Server 依赖 [BEGIN] -->
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-netflix-eureka-server</artifactId>
+			<artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
 		</dependency>
 		<!-- 配置 Spring Cloud Netflix Eureka Server 依赖 [END] -->
 
@@ -36,7 +36,6 @@
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
-
 	<build>
 		<pluginManagement>
 			<plugins>
